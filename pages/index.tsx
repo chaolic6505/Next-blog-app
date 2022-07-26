@@ -1,12 +1,8 @@
 import type { NextPage } from 'next'
+import { signIn, signOut } from 'next-auth/react'
 import Head from 'next/head'
 
 import OAuthButton from '../components/Buttons/OAuth'
-
-const signIn = async () => {
-  console.log('press')
-
-};
 
 const Home: NextPage = () => {
   return (
@@ -16,25 +12,29 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold mb-5">
+    <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+        <h1 className="text-6xl font-bold">
           Welcome to{' '}
           <a className="text-blue-600" href="https://nextjs.org">
-            T3 Start Kit
+            Next.js!
           </a>
         </h1>
-        <div>
+
+        <p className="mt-3 text-2xl">
+          Get started by editing{' '}
+          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
+            pages/index.tsx
+          </code>
+        </p>
+
+
           <OAuthButton
-            color="#4285F4"
+            onClick={() => signIn('google')}
+            color="#5a03d5"
             title="Google"
-            onClick={signIn}
+            type="google"
           />
-          <OAuthButton
-            color="#3b5998"
-            title="Facebook"
-            onClick={signIn}
-          />
-        </div>
+
       </main>
 
     </div>
