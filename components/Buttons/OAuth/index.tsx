@@ -1,28 +1,35 @@
 import React, { MouseEventHandler } from 'react'
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
+import { SignInResponse } from 'next-auth/react';
+
 
 type Button = {
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick: () => Promise<SignInResponse | undefined>;
   color: string,
   title: string,
+  type: string,
 };
 
 
-export default function OAuthButton({ onClick, color, title  } : Button) {
+export default function OAuthButton({ color, title, type, onClick } : Button ) {
   console.log(color)
-  if (!color) return <p>Loading...</p>;
 
   return (
-    <button
-      type="button"
-      className={`px-8 text-white bg-[${color}] hover:bg-[${color}]/90 focus:ring-4 focus:outline-none focus:ring-[${color}]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2`}>
+    <div className="mt-3">
+      <button
+        onClick={onClick}
+        type="button"
+        className={`flex items-center text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-8 py-5 text-center mr-2 mb-2`}
+      >
         {
-          title === 'Google' ?
-          <FaGoogle className="mr-3"/> :
-          <FaFacebook className="mr-3"/>
+          type === 'google' ?
+          <FaGoogle className="mr-2"/> :
+          <FaFacebook className="mr-2"/>
         }
         {title}
       </button>
+    </div>
+
   )
 }
 
