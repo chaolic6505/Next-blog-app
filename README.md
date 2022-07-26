@@ -1,2 +1,4 @@
-# X-Store
-Next js E-Commerce App
+# T3 Stacks Starter
+Next js
+Tailwind
+Typescript
