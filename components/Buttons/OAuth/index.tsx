@@ -26,7 +26,7 @@ export default function OAuthButton({ color, title, type, onClick } : Button ) {
           <FaGoogle className="mr-2"/> :
           <FaFacebook className="mr-2"/>
         }
-        {title}
+        Sing In
       </button>
     </div>
 
