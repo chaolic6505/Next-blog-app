@@ -1,5 +1,5 @@
-# Full Stacks Starter
+# Medium Clone
 - Next.js
 - Tailwind
 - Typescript
-- Firebase
+- Sanity
