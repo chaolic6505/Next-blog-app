@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Header from "../components/Header";
+import Banner from "../components/Banner";
 import Head from "next/head";
 
 const Home: NextPage = () => {
@@ -9,7 +10,9 @@ const Home: NextPage = () => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Header />
+      <Banner />
     </div>
   );
 };
