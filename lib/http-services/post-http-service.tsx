@@ -18,6 +18,5 @@ const PostsHttpService = {
     }
 }
 
-
 export default PostsHttpService;
 
