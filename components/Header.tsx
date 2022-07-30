@@ -25,21 +25,19 @@ const leftSide = () => {
 const rightSide = () => {
   return (
     <div className="flex items-center space-x-5 text-green-600">
-        <h3>Sign In</h3>
-        <h3 className="rounded-full border border-green-600 px-4 py-1">
-          Get Started
-        </h3>
-      </div>
+      <h3>Sign In</h3>
+      <h3 className="rounded-full border border-green-600 px-4 py-1">
+        Get Started
+      </h3>
+    </div>
   );
 };
-
 
 export default function Header() {
   return (
     <header className="mx-auto flex max-w-7xl justify-between p-5">
-      { leftSide() }
-      { rightSide() }
-
+      {leftSide()}
+      {rightSide()}
     </header>
   );
 }
