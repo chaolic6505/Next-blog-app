@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import Header from "../components/Header";
 import Banner from "../components/Banner";
-import Posts from "../components/Posts";
+import PostLinksContainer from "../components/containers/PostLinksContainer";
 import { Post as _Post } from "../typing";
 import PostsServices from "../lib/http-services/post-http-service"
 
@@ -21,7 +21,7 @@ export default function Home({ posts }: Props) {
 
       <Header />
       <Banner />
-      <Posts posts={posts} />
+      <PostLinksContainer posts={posts} />
     </div>
   );
 }

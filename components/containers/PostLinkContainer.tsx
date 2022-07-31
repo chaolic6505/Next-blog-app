@@ -1,15 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
-import { Post as _Post } from "../typing";
-import { urlFor } from "../sanity";
+import { Post as _Post } from "../../typing";
+import { urlFor } from "../../sanity";
 
 interface Props {
     post: _Post;
 }
 
-export default function Post({ post }: Props) {
+export default function PostLinkContainer({ post }: Props) {
     console.log(post, "post");
     return (
         <div className="bg-slate-50">
