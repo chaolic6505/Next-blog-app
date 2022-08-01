@@ -26,7 +26,7 @@ const leftSide = () => {
 const rideSide = () => {
     return (
         <img
-            src="/images/logo/banner-logo.svg"
+            src="/images/logo/banner-logo-black.svg"
             className="hidden h-52 px-10 md:inline-flex"
         />
     );

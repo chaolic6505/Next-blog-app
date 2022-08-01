@@ -1,8 +1,10 @@
 # Medium Clone
 
-### [__Live URL__](https://medium-clone-six-ebon.vercel.app/)
+### [**Client URL**](https://medium-clone-six-ebon.vercel.app/)
+### [**Server URL**](https://next-medium-clone.sanity.studio/desk/)
 
 #### Tech Stacks:
+
 - Next.js
 - Tailwind
 - Typescript
