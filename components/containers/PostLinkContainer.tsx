@@ -1,15 +1,15 @@
 import React from "react";
 import Link from "next/link";
 
-import { Post as _Post } from "../../typing";
+import { Post } from "../../typing";
 import { urlFor } from "../../sanity";
 
-interface Props {
-    post: _Post;
+interface PostLinkContainerProps {
+    post: Post;
 }
 
-export default function PostLinkContainer({ post }: Props) {
-    console.log(post, "post");
+export default function PostLinkContainer({ post }: PostLinkContainerProps) {
+
     return (
         <div className="bg-slate-50">
             <Link key={post._id} href={`/post/${post.slug.current}`} className="bg-slate-50">

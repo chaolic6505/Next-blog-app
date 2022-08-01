@@ -6,11 +6,11 @@ import PostsServices from "../lib/http-services/post-http-service";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 
-interface Props {
+interface HomeProps {
     posts: [_Post];
 }
 
-export default function Home({ posts }: Props) {
+export default function Home({ posts }: HomeProps) {
     console.log(posts);
     return (
         <div className="mx-auto max-w-7xl">
