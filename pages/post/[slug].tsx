@@ -17,11 +17,20 @@ function Post({ post }: PostProps) {
     return (
         <main>
             <Header />
-            <img
-                alt="post-image"
-                src={urlFor(post.mainImage).url()!}
-                className="w-full h-40 object-cover"
-            />
+            {post.mainImage ? (
+                <img
+                    alt="post-image"
+                    src={urlFor(post.mainImage).url()!}
+                    className="w-full h-40 object-cover"
+                />
+            ) : (
+                <img
+                    alt="post"
+                    src="/images/logo/medium-logo-black-rgb.svg"
+                    className="h-60 w-1/2object-cover transition-transform duration-200 ease-in-out group-hover:scale-105"
+                />
+            )}
+
             <article className="max-w-3xl mx-auto p-5">
                 <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
                 <h2 className="text-xl font-light text-gray-500 mb-2">
