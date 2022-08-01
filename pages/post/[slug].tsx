@@ -4,6 +4,8 @@ import { urlFor } from "../../sanity";
 import PortableText from "react-portable-text";
 
 import Header from "../../components/Header";
+import CommentForm from "../../components/CommentForm";
+
 import { Post } from "../../typing";
 
 import PostsServices from "../../lib/http-services/post-http-service";
@@ -94,6 +96,8 @@ function Post({ post }: PostProps) {
                     />
                 </div>
             </article>
+            <hr className="max-w-lg my-5 mx-auto border border-slate-500" />
+            <CommentForm />
         </main>
     );
 }

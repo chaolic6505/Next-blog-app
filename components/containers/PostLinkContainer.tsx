@@ -9,10 +9,13 @@ interface PostLinkContainerProps {
 }
 
 export default function PostLinkContainer({ post }: PostLinkContainerProps) {
-
     return (
         <div className="bg-slate-50">
-            <Link key={post._id} href={`/post/${post.slug.current}`} className="bg-slate-50">
+            <Link
+                key={post._id}
+                href={`/post/${post.slug.current}`}
+                className="bg-slate-50"
+            >
                 <div className="group cursor-pointer overflow-hidden rounded-lg">
                     {post.mainImage ? (
                         <img
