@@ -1,13 +1,13 @@
 import Head from "next/head";
 
 import PostLinksContainer from "../components/containers/PostLinksContainer";
-import { Post as _Post } from "../typing";
+import { Post } from "../typing";
 import PostsServices from "../lib/http-services/post-http-service";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 
 interface HomeProps {
-    posts: [_Post];
+    posts: [Post];
 }
 
 export default function Home({ posts }: HomeProps) {

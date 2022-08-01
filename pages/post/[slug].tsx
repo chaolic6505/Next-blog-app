@@ -3,15 +3,15 @@ import { GetStaticProps } from "next";
 import { urlFor } from "../../sanity";
 
 import Header from "../../components/Header";
-import { Post as typePost } from "../../typing";
+import { Post } from "../../typing";
 
 import PostsServices from "../../lib/http-services/post-http-service";
 
 interface PostProps {
-    post: typePost;
+    post: Post;
 }
 
-export const Post = ({ post }: PostProps) => {
+function Post ({ post }: PostProps)  {
     console.log(post, "post");
     return (
         <main>
@@ -38,6 +38,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         props: {
             post,
         },
+        revalidate: 60,
     };
 };
 
