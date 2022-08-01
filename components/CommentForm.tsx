@@ -5,7 +5,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const FormSchema = z.object({
     name: z.string().min(1, "Name must be at least 1 character long."),
-    email: z.string().min(1,"Email is required").email({ message: "The email is invalid." }),
+    email: z
+        .string()
+        .min(1, "Email is required")
+        .email({ message: "The email is invalid." }),
     comment: z.string().min(5, "Comment must be at least 5 character long."),
 });
 
@@ -47,12 +50,12 @@ const CommentForm: FC = () => {
                         {...register("name")}
                         disabled={isSubmitting}
                     />
+                    {errors.name && (
+                        <p className="text-sm text-red-600 mt-1">
+                            {errors.name.message}
+                        </p>
+                    )}
                 </label>
-                {errors.name && (
-                    <p className="text-sm text-red-600 mt-1">
-                        {errors.name.message}
-                    </p>
-                )}
 
                 <label className="block mb-5">
                     <span className="text-gray-700">Email</span>
@@ -62,12 +65,12 @@ const CommentForm: FC = () => {
                         {...register("email")}
                         disabled={isSubmitting}
                     />
+                    {errors.email && (
+                        <p className="text-sm text-red-600 mt-1">
+                            {errors.email.message}
+                        </p>
+                    )}
                 </label>
-                {errors.email && (
-                    <p className="text-sm text-red-600 mt-1">
-                        {errors.email.message}
-                    </p>
-                )}
 
                 <label className="block mb-5">
                     <span className="text-gray-700">Comment</span>
@@ -77,12 +80,12 @@ const CommentForm: FC = () => {
                         {...register("comment")}
                         disabled={isSubmitting}
                     />
+                    {errors.comment && (
+                        <p className="text-sm text-red-600 mt-1">
+                            {errors.comment.message}
+                        </p>
+                    )}
                 </label>
-                {errors.comment && (
-                    <p className="text-sm text-red-600 mt-1">
-                        {errors.comment.message}
-                    </p>
-                )}
             </form>
 
             <pre>{JSON.stringify(watch(), null, 2)}</pre>
