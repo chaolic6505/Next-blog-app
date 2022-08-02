@@ -89,7 +89,7 @@ const CommentForm: FC = () => {
             </label>
             <button
                 type="submit"
-                className="w-full px-8 py-4 flex items-center justify-center uppercase text-white font-semibold bg-cyan-400 rounded-lg disabled:bg-gray-100 disabled:text-gray-400"
+                className="w-full px-8 py-2 flex items-center justify-center uppercase text-white font-semibold bg-cyan-400 rounded-lg disabled:bg-gray-100 disabled:text-gray-400"
                 disabled={isSubmitting}
             >
                 Submit
