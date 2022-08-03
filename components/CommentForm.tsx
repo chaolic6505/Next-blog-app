@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Post } from "../typing";
 
-interface PostProps {
+interface CommentFormProps {
     post: Post;
 }
 
@@ -28,7 +28,7 @@ interface IFormInput {
     comment: string;
 }
 
-const CommentForm: FC<PostProps> = ({ post }) => {
+const CommentForm: FC<CommentFormProps> = ({ post }) => {
     const [submitted, setSubmitted] = useState(false);
 
     const {
