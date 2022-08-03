@@ -42,7 +42,7 @@ const PostsHttpService = {
         };
     },
     fetchPostProps: async (params: fetchPostProps) => {
-        const query = `*[_type == "post" && slug.current == $slug][0]{
+        const query = `*[_type == "post" && slug.current == $slug][0] {
             _id,
             _createdAt,
             title,
@@ -50,9 +50,11 @@ const PostsHttpService = {
                 name,
                 image
             },
-            'comments' : *[_type == "comment" &&
+            'comments' : *[
+                _type == "comment" &&
                 post._ref == ^._id &&
-                approved== true],
+                approved== true
+            ],
             description,
             mainImage,
             slug,

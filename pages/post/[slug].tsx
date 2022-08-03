@@ -96,7 +96,27 @@ function Post({ post }: PostProps) {
                 </div>
             </article>
             <hr className="max-w-lg my-5 mx-auto border border-slate-500" />
-            <CommentForm />
+
+
+            <CommentForm post={post} />
+            {/* Comments */}
+            <div className="my-10 mx-auto flex max-w-2xl flex-col space-y-2 p-10 shadow  shadow-yellow-500">
+                <h3 className="text-4xl">Comments</h3>
+                <hr className="pb-2" />
+
+                {post.comments.map((comment) => {
+                    return (
+                        <div key={comment._id}>
+                            <p>
+                                <span className="text-yellow-500">
+                                    {comment.name}:{" "}
+                                </span>
+                                {comment.comment}
+                            </p>
+                        </div>
+                    );
+                })}
+            </div>
         </main>
     );
 }
