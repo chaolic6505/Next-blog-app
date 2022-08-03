@@ -8,14 +8,13 @@ import CommentForm from "../../components/CommentForm";
 
 import { Post } from "../../typing";
 
-import PostsServices from "../../lib/http-services/post-http-service";
+import PostsServices from "../../lib/http-services/posts-http-service";
 
 interface PostProps {
     post: Post;
 }
 
 function Post({ post }: PostProps) {
-    console.log(post, "post");
     return (
         <main>
             <Header />

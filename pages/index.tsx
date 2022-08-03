@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import PostLinksContainer from "../components/containers/PostLinksContainer";
 import { Post } from "../typing";
-import PostsServices from "../lib/http-services/post-http-service";
+import PostsServices from "../lib/http-services/posts-http-service";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 
@@ -11,7 +11,7 @@ interface HomeProps {
 }
 
 export default function Home({ posts }: HomeProps) {
-    console.log(posts);
+
     return (
         <div className="mx-auto max-w-7xl">
             <Head>
