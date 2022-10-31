@@ -2,13 +2,6 @@
 
 <p align="center"><project-description></p>
 
-## Demo
-
--   [Live](https://medium-clone-six-ebon.vercel.app/)
-
-<!-- ## Screenshots
-![](/screenshots/2.png)
-![](/screenshots/3.png) -->
 
 ## Get Started
 
@@ -74,15 +67,3 @@ NEXT_PUBLIC_SANITY_DATASET="YOUR_DATASET"
 NEXT_PUBLIC_SANITY_PROJECT_ID='YOUR_PROJECT_ID'
 SANITY_API_TOKEN='YOUR_TOKEN'
 ```
-
-<!-- ## Future Updates
-
--   [ ] Reliable Storage -->
-
-## Contributor
-
-**Chao-Li Chen**
-
-<!-- -   [Profile](https://github.com/rohit19060 "Rohit jain")
--   [Email](mailto:rohitjain19060@gmail.com?subject=Hi "Hi!")
--   [Website](https://kingtechnologies.in "Welcome") -->
