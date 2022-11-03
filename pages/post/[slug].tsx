@@ -3,10 +3,9 @@ import { GetStaticProps } from 'next';
 import { urlFor } from '../../sanity';
 import PortableText from 'react-portable-text';
 
+import { Post } from '../../typing';
 import Header from '../../components/Header';
 import CommentForm from '../../components/CommentForm';
-
-import { Post } from '../../typing';
 
 import PostsServices from '../../lib/http-services/posts-http-service';
 
@@ -19,6 +18,7 @@ function Post({ post }: PostProps) {
 
     useEffect(() => setMounted(true), []);
     if (!mounted) return null;
+
     return (
         <main>
             <Header />
@@ -102,6 +102,7 @@ function Post({ post }: PostProps) {
             <hr className='max-w-lg my-5 mx-auto border border-slate-500' />
 
             <CommentForm post={post} />
+
             {/* Comments */}
             <div className='my-10 mx-auto flex max-w-2xl flex-col space-y-2 p-10 shadow  shadow-yellow-500'>
                 <h3 className='text-4xl'>Comments</h3>
@@ -147,5 +148,3 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export default Post;
-
-

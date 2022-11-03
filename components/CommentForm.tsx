@@ -136,7 +136,6 @@ const CommentForm: FC<CommentFormProps> = ({ post }) => {
                         >
                             Submit
                         </button>
-                        {/* <pre>{JSON.stringify(watch(), null, 2)}</pre> */}
                     </form>
                 )}
             </>
