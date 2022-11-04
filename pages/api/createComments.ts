@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import sanityClient from "@sanity/client";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const config = {
     token: process.env.SANITY_API_TOKEN,
