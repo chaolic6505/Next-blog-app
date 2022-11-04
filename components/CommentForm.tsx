@@ -1,11 +1,10 @@
 import { z } from 'zod';
 import { FC, useState } from 'react';
-import { useMutation } from 'react-query';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { Post, IFormInput } from '../typing';
-import CommentsHttpService from '../lib/http-services/comments-http-service';
+import { useAddComments } from '../lib/http-services/comments-http-service';
 
 interface CommentFormProps {
     post: Post;
@@ -24,8 +23,8 @@ const FormSchema = z.object({
 type FormSchemaType = z.infer<typeof FormSchema>;
 
 const CommentForm: FC<CommentFormProps> = ({ post }) => {
+    const { mutate } = useAddComments();
     const [submitted, setSubmitted] = useState(false);
-
     const {
         register,
         handleSubmit,
@@ -33,12 +32,6 @@ const CommentForm: FC<CommentFormProps> = ({ post }) => {
     } = useForm<FormSchemaType>({
         resolver: zodResolver(FormSchema),
     });
-
-    const useAddComments = () => {
-        return useMutation(CommentsHttpService.addComments);
-    };
-
-    const { mutate } = useAddComments();
 
     const onSubmit: SubmitHandler<IFormInput> = async (data) => mutate(data, {
         onError: () => setSubmitted(false),
