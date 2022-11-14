@@ -1,9 +1,10 @@
-import { FC, useState } from 'react';
 import { z } from 'zod';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { FC, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { Post } from '../typing';
+import { Post, IFormInput } from '../typing';
+import { useAddComments } from '../lib/http-services/comments-http-service';
 
 interface CommentFormProps {
     post: Post;
@@ -21,16 +22,9 @@ const FormSchema = z.object({
 
 type FormSchemaType = z.infer<typeof FormSchema>;
 
-interface IFormInput {
-    _id: string;
-    name: string;
-    email: string;
-    comment: string;
-}
-
 const CommentForm: FC<CommentFormProps> = ({ post }) => {
+    const { mutate } = useAddComments();
     const [submitted, setSubmitted] = useState(false);
-
     const {
         register,
         handleSubmit,
