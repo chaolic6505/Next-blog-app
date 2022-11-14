@@ -52,8 +52,7 @@ const PostsHttpService = {
             },
             'comments' : *[
                 _type == "comment" &&
-                post._ref == ^._id &&
-                approved== true
+                post._ref == ^._id
             ],
             description,
             mainImage,
