@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react'
+import Link from 'next/link'
 
 const leftSide = () => {
   return (
@@ -19,8 +19,8 @@ const leftSide = () => {
         </h3>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const rightSide = () => {
   return (
@@ -30,8 +30,8 @@ const rightSide = () => {
         Get Started
       </h3>
     </div>
-  );
-};
+  )
+}
 
 export default function Header() {
   return (
@@ -39,5 +39,5 @@ export default function Header() {
       {leftSide()}
       {rightSide()}
     </header>
-  );
+  )
 }
