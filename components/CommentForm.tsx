@@ -33,16 +33,20 @@ const CommentForm: FC<CommentFormProps> = ({ post }) => {
         resolver: zodResolver(FormSchema),
     });
 
-    const onSubmit: SubmitHandler<IFormInput> = async (data) => mutate(data, {
-        onError: () => setSubmitted(false),
-        onSuccess: () => setSubmitted(true),
-    });
+    const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+        fetch('/api/createComments', {
+            method: 'POST',
+            body: JSON.stringify(data),
+        })
+            .then(() => setSubmitted(true))
+            .catch((err) => setSubmitted(false));
+    };
 
     return (
         <>
             <>
                 {submitted ? (
-                    <div className='my-10 mx-auto flex max-w-2xl flex-col bg-yellow-500 p-10 text-white'>
+                    <div className='my-10 mx-auto flex max-w-2xl flex-col bg-slate-700 p-10 text-white'>
                         <h3>Thankyou for submitting your comment</h3>
                         <p>Once it has been approved, it will appear below! </p>
                     </div>
@@ -115,7 +119,7 @@ const CommentForm: FC<CommentFormProps> = ({ post }) => {
                         </label>
                         <button
                             type='submit'
-                            className='w-full px-8 py-2 flex items-center justify-center uppercase text-white font-semibold bg-cyan-400 rounded-lg disabled:bg-gray-100 disabled:text-gray-400'
+                            className='w-full px-8 py-2 flex items-center justify-center uppercase text-white font-semibold bg-slate-700 rounded-lg disabled:bg-gray-100 disabled:text-gray-400'
                             disabled={isSubmitting}
                         >
                             Submit

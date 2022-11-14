@@ -1,6 +1,6 @@
-import { sanityClient } from "../../sanity";
+import { sanityClient } from '../../sanity';
 
-import { Post } from "../../typing";
+import { Post } from '../../typing';
 
 interface fetchPostProps {
     slug: string | string[] | undefined;
@@ -38,7 +38,7 @@ const PostsHttpService = {
 
         return {
             paths,
-            fallback: "blocking",
+            fallback: 'blocking',
         };
     },
     fetchPostProps: async (params: fetchPostProps) => {
